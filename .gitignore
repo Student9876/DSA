@@ -1,3 +1,4 @@
 *.pdf
 **/TimeComplexityQuestions
 **/.vscode
+*/Code/*.exe
