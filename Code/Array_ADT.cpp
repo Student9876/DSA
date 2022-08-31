@@ -30,6 +30,7 @@ public:
         {
             cout << ptr[i] << "\t";
         }
+        cout<<endl;
     }
 };
 
