@@ -47,10 +47,10 @@ int main()
 {
     struct myArray marks;
     createArray(&marks, 10, 2);
-    printf("Wea are running setVal now\n");
+    printf("We are running setVal now\n");
     setVal(&marks);
 
-    printf("Wea are running Show now\n");
+    printf("We are running Show now\n");
     show(&marks);
     return 0;
 }
