@@ -56,6 +56,7 @@ struct Node *deleteLast(struct Node *head)
     return head;
 }
 
+// Cannot Delete First element
 struct Node *deleteElement(struct Node *head, int element)
 {
     struct Node *p = head;
