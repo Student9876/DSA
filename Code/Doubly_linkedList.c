@@ -39,7 +39,7 @@ int main()
     fourth = (struct Node *)malloc(sizeof(struct Node));
 
     // Linking of head
-    head->next = NULL;
+    head->prev = NULL;
     head->data = 5;
     head->next = second;
 
