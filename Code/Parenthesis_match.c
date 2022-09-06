@@ -39,13 +39,11 @@ void push(struct stack *ptr, char value)
     }
     else
     {
-        // printf("%d pushed successfully\n", value);
         ptr->top++;
         ptr->arr[ptr->top] = value;
-        // printf("\n");
     }
 }
-char pop(struct stack *ptr)
+void pop(struct stack *ptr)
 {
     if (isEmpty(ptr))
     {
@@ -55,16 +53,17 @@ char pop(struct stack *ptr)
     {
         char val = ptr->arr[ptr->top];
         ptr->top--;
-        return val;
     }
 }
 int parenthesisMatch(char *exp)
 {
     // Create and Initialize the stack
-    struct stack *sp;
-    sp->size = strlen(exp);
-    printf("string length %d\n", sp->size);
+
+    // stack *sp; This will cause segmentaion fault( core dumped )
+    struct stack *sp = (struct stack *)malloc(sizeof(struct stack));
     sp->top = -1;
+    sp->size = strlen(exp);
+    // printf("string length %d\n", sp->size);
     sp->arr = (char *)malloc(sp->size * sizeof(char));
 
     for (int i = 0; exp[i] != '\0'; i++)
@@ -97,11 +96,11 @@ int main()
     char *exp = "((?>((?<c>)|[^()]+|)(?<-c>))*(?(c)(?!)))";
     if (parenthesisMatch(exp))
     {
-        printf("The parenthesis is matching");
+        printf("The parenthesis is matching\n");
     }
     else
     {
-        printf("The parenthesis is not matching");
+        printf("The parenthesis is not matching\n");
     }
     return 0;
 }
