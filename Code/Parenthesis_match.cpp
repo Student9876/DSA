@@ -61,7 +61,7 @@ int parenthesisMatch(char *exp)
 {
     // Create and Initialize the stack
     // stack *sp; This will cause segmentaion fault( core dumped )
-    stack *sp = (stack *)malloc(sizeof(stack));
+    stack *sp = new stack;
     sp->top = -1;
     sp->size = strlen(exp);
     // printf("string length %d\n", sp->size);
