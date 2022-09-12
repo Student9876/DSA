@@ -33,6 +33,7 @@ void enqueue(struct queue *q, int val)
     }
     else
     {
+        printf("Enqueued Element: %d\n", val);
         q->r++;
         q->arr[q->r] = val;
     }
@@ -55,7 +56,7 @@ int dequeue(struct queue *q)
 int main()
 {
     struct queue q;
-    q.size = 100;
+    q.size = 3;
     q.f = q.r = -1;
     q.arr = (int *)malloc(q.size * sizeof(int));
 
@@ -67,5 +68,16 @@ int main()
     enqueue(&q, 36);
 
     printf("Dequeuing element %d\n", dequeue(&q));
+    printf("Dequeuing element %d\n", dequeue(&q));
+    printf("Dequeuing element %d\n", dequeue(&q));
+
+    // // Thats the problem with linear queue. Can be solved by Circular queue
+    // enqueue(&q, 45); // This will print ' Queue is Full '. But actually queue is empty.
+
+    // // below this 2 functions will run simultanously. Because both the front and rear are at the end and we cannot reuse them
+    // if (isEmpty(&q))
+    //     printf("Queue is empty\n");
+    // if (isFull(&q))
+    //     printf("Queue is Full\n");
     return 0;
 }
