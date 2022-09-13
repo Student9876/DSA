@@ -44,6 +44,7 @@ public:
         if (isEmpty(q))
         {
             cout << "This queue is Empty!!" << endl;
+            return (T)-1;
         }
         else
         {
@@ -64,6 +65,9 @@ int main()
     q.enqueue(&q, 23);
     q.enqueue(&q, 41);
     q.enqueue(&q, 45);
+    cout << "Dequeued Value: " << q.dequeue(&q) << endl;
+    cout << "Dequeued Value: " << q.dequeue(&q) << endl;
+    cout << "Dequeued Value: " << q.dequeue(&q) << endl;
     cout << "Dequeued Value: " << q.dequeue(&q) << endl;
     q.enqueue(&q, 45);
     return 0;
