@@ -21,26 +21,26 @@ int partition(int *A, int low, int high)
     {
         while (A[i] <= pivot)
         {
-            i++;
+            i++; // If pivot is less than the A[i] then we are increasing the i value to find the value larger than pivot
         }
         while (A[j] > pivot)
         {
-            j--;
+            j--; // If pivot is greater than the A[j] then we are decreasing the j value to find the value smaller than pivot
         }
         if (i < j)
         {
-            // swap
+            // swapping values when a match is found
             temp = A[i];
             A[i] = A[j];
             A[j] = temp;
         }
     } while (i < j);
 
-    // swap
+    // swapping the pivot
     temp = A[low];
     A[low] = A[j];
     A[j] = temp;
-    return j;
+    return j; // returning the value of j from where the partition starts in two sides
 }
 void quickSort(int *A, int low, int high)
 {
