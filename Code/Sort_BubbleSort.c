@@ -16,6 +16,10 @@ void printArray(int *A, int n)
 //     a = temp;
 // }
 
+
+// The worst-case time complexity of Bubble Sort is: O(n^2)
+// The best-case time complexity of Bubble Sort is: O(n)
+
 void bubbleSortAdaptive(int *A, int n)
 {
     int temp;
