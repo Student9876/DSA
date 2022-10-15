@@ -1,4 +1,4 @@
-// Binary search works with only a sorted list 
+// Binary search works with only a sorted list
 // Binary search returns an index of the element if it exists in the List
 // Average case complexity of binary search is O(log(n))
 #include <bits/stdc++.h>
@@ -7,7 +7,7 @@ using namespace std;
 int binarySearch(int *arr, int element, int n)
 {
     int low, mid, high;
-    low = 0;    
+    low = 0;
     high = n - 1;
     while (low <= high)
     {
